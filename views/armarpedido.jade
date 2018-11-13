@@ -1,0 +1,21 @@
+extends layout
+    
+div.container
+    block content
+        h1 #{title}
+        br
+        script(src='/javascripts/pedidos.js')
+        div.row
+            div.col-md-4.form-group
+                select#inputProducto.form-control
+                    each prod, i in docs
+                        option(value=prod._id)=prod.nombre
+                br
+                input#inputCantidad(type='text', placeholder='Cantidad').form-control
+                br
+                input#btnPedidoAddProducto(type='button', value="Ingresar").btn.btn-success
+        table#tablePedidos.table.table-bordered
+            thead
+                td ProductoId
+                td Cantidad
+        input#btnPedidoSavePedido(type='button', value="Armar pedido").btn.btn-success

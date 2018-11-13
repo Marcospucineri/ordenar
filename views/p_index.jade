@@ -1,0 +1,28 @@
+extends layout
+    
+div.container
+    block content
+        h1 #{title}
+        script(src='/javascripts/productos.js')
+        table#tableProductos.table.table-bordered
+            thead
+                td.hiddenRow Id
+                td Nombre
+                td Descripcion
+                td Categoria
+                td Precio
+                td Acciones
+            each prod, i in docs
+                tr
+                    td.hiddenRow.idRow= prod._id
+                    td= prod.nombre
+                    td= prod.descripcion
+                    td= prod.categoria 
+                    td= "$"+prod.precio
+                    td
+                        a(rel="#{prod._id}").btnIndexDeleteProducto.btn.btn-danger Eliminar  
+        a(href="create").btn.btn-success Crear producto
+        br
+
+
+

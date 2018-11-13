@@ -1,0 +1,32 @@
+EJEMPLO
+
+PRODUCTOS:
+> db.productos.insert(
+{
+        "nombre" : "Coca-cola 2,25lts",
+        "descripcion" : "Coca cola 2.25",
+        "precio" : "10",
+        "activo" : "1",
+        "categoria" : "Bebidas"
+})
+
+PEDIDOS:
+> db.pedidos.find().pretty()
+{
+        "_id" : ObjectId("538121dd3131a6c01409e114"),
+        "fecha" : "Sat May 24 2014 19:49:01 GMT-0300 (Hora estándar de Argentina
+)",
+        "activo" : "true",
+        "mesaId" : "1",
+        "productos" : [
+                {
+                        "productoId" : "53810d74d45a424c19acb2c3",
+                        "cantidad" : "7"
+                },
+                {
+                        "productoId" : "53811294d45a424c19acb2c4",
+                        "cantidad" : "3"
+                }
+        ]
+}
+>

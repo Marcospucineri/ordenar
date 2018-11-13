@@ -1,0 +1,26 @@
+extends layout
+    
+div.container
+    block content
+        h1 #{title}
+        br
+        script(src='/javascripts/productos.js')
+        div.row
+            div.col-md-4.form-group
+                input#inputNombre(type='text', placeholder='Nombre').form-control
+                br
+                br 
+                input#inputDescripcion(type='text', placeholder='Descripcion').form-control
+                br
+                br
+                select#inputCategoria.form-control
+                    option(value="bebidas") bebidas
+                    option(value="hamburguesas") hamburguesas
+                    option(value="varios") varios
+                br
+                br
+                input#inputPrecio(type='text', placeholder='Precio').form-control
+                br 
+                br
+                br
+                input#btnCreateAddProducto(type='button', value="Ingresar").btn.btn-success
